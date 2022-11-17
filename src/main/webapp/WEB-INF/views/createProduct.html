@@ -1,0 +1,66 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html>-->
+<!--<head>-->
+<!--  <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form method="post" action="/create">-->
+
+<!--  <input name="id" placeholder="Nhập id">-->
+<!--  <br>-->
+<!--  <input name="name" placeholder="Nhập name">-->
+<!--  <br>-->
+<!--  <input name="img" placeholder="Nhập img">-->
+<!--  <br>-->
+<!--  <input name="price" placeholder="Nhập price">-->
+<!--  <br>-->
+<!--  <select name="status">-->
+<!--    <option value="1">Còn Hàng</option>-->
+<!--    <option value="0">Hết Hàng</option>-->
+<!--  </select>-->
+
+<!--  <button type="submit">Submit</button>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<head>
+  <title>Title</title>
+</head>
+<body>
+<div align="center">
+  <form action="/create" method="post" th:object="${linh}" enctype="multipart/form-data">
+    <h1>Create Product</h1>
+    <table>
+      <tr>
+        <td>Nhập id</td>
+        <td><input th:field="*{id}"></td>
+      </tr>
+      <tr>
+        <td>Nhập name</td>
+        <td><input th:field="*{name}"></td>
+      </tr>
+      <tr>
+        <td>Nhập img</td>
+        <td><input name="upImg" type="file"></td>
+      </tr>
+      <tr>
+        <td>Nhập price</td>
+        <td><input th:field="*{price}"></td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>
+          <select th:field="*{status}">
+            <option value="1">Còn Hàng</option>
+            <option value="0">Hết Hàng</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>
